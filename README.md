@@ -1,4 +1,4 @@
-#php_overview.php
+# php_overview.php
 enthält die wichtigsten Php-Statements zur Datenbankverbindung und SQl-Statements
 SELECT, UPDATE, DELETE-Statesments erstellen und abschicken.
 SELECT-Statements durchwandern
