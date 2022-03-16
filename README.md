@@ -14,7 +14,7 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 - SELECT-Statements durchwandern
 
 
-# bootstrap einbinden --> siehe bootstrap.de
+# bootstrap einbinden --> siehe bootstrap_Vorlage.php
 - Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/
 - cdn-Variante genügt. Bootstrap muss nicht unbedingt installiert werden
 
