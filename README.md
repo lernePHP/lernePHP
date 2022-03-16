@@ -14,6 +14,12 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 - SELECT-Statements durchwandern
 
 
+# bootstrap einbinden --> siehe bootstrap.de
+- Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/
+- cdn-Variante genügt. Bootstrap muss nicht unbedingt installiert werden
+
+# bootstrap_Vorlage.php
+enthält ein Formular-Layout mit den gängigsten Elementen
 
 <!---
 - 👋 Hi, I’m @lernePHP Das ist mein erstes github repository
