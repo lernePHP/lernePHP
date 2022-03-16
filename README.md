@@ -15,7 +15,7 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 
 
 # bootstrap einbinden --> siehe bootstrap_Vorlage.php
-- Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/
+- Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/ bzw. https://getbootstrap.com/docs/5.1/examples/checkout/
 - cdn-Variante genügt. Bootstrap muss nicht unbedingt installiert werden
 
 # bootstrap_Vorlage.php
