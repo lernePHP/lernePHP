@@ -56,6 +56,16 @@
             <label class="form-check-label" for="paypal">PayPal</label>
         </div>
 
+        <h4 class="mt-5">Drop down</h4>
+        <label for="state" class="form-label">State</label>
+        <select class="form-select" id="state" required>
+            <option value="">Choose...</option>
+            <option>California</option>
+        </select>
+        <div class="invalid-feedback">
+        Please provide a valid state.
+        </div>
+
 
 
         <label for="exampleFormControlTextarea1" class="sr-only">Example textarea</label>
