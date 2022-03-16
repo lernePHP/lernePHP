@@ -1,3 +1,9 @@
+#php_overview.php
+enthält die wichtigsten Php-Statements zur Datenbankverbindung und SQl-Statements
+SELECT, UPDATE, DELETE-Statesments erstellen und abschicken.
+SELECT-Statements durchwandern
+
+
 - 👋 Hi, I’m @lernePHP Das ist mein erstes github repository
 - 👀 I’m interested in ...
 - 🌱 I’m currently learning ...
