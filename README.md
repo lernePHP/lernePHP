@@ -21,6 +21,12 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 # bootstrap_Vorlage.php
 enthält ein Formular-Layout mit den gängigsten Elementen
 
+
+# weiterführende Webseiten:
+- https://www.php-einfach.de/mysql-tutorial/php-prepared-statements/
+- https://www.w3schools.com/php
+- https://werner-zenk.de/tipps/erster_eintrag_in_eine_mysql-datenbank_2.php#db4
+- 
 <!---
 - 👋 Hi, I’m @lernePHP Das ist mein erstes github repository
 - 👀 I’m interested in ...
