@@ -6,12 +6,23 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 - ein evtl. Fehler beim DB-Aufbau wird angezeigt und der Ladevorgang abgebrochen.
 - Die Verbindung kann unter der Variablen $conn angesprochen werden.
 
-# php_overview.php
+# bsp_PDO_select.php, _query.php, _insert.php, _delete.php
 **Achtung!**
 **config.php und connection.php müssen vorhanden sein. Sie werden in php_overview.php eingebunden**
 - enthält die wichtigsten Php-Statements
 - SELECT, UPDATE, DELETE-Statesments erstellen und abschicken.
 - SELECT-Statements durchwandern
+- wie ist die ID des gerade eingefügten Datensatzes?
+
+# DS_aus_Liste_aendern_und_loeschen.php
+gibt beim Start eine Liste aus, die jeweils für ändern und löschen eine Schaltfläche neben jedem Datensatz aufweist.
+
+
+# register_person.php
+
+
+# login_peson.php
+überprüft
 
 
 # bootstrap einbinden --> siehe bootstrap_Vorlage.php
