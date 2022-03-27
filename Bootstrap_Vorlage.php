@@ -44,15 +44,15 @@
 
         <h4 class="mt-5">Payment</h4>
         <div class="form-check">
-                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <input id="credit" name="paymentMethod" value="credit" type="radio" class="form-check-input" checked required>
                 <label class="form-check-label" for="credit">Credit card</label>
         </div>
         <div class="form-check">
-            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+            <input id="debit" name="paymentMethod" value="debit" type="radio" class="form-check-input" required>
             <label class="form-check-label" for="debit">Debit card</label>
         </div>
         <div class="form-check">
-            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+            <input id="paypal" name="paymentMethod" value="paypal" type="radio" class="form-check-input" required>
             <label class="form-check-label" for="paypal">PayPal</label>
         </div>
 

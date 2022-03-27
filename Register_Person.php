@@ -12,12 +12,10 @@ $email = "";
 $stammkunde = "";
 $geschlecht = "";
 $abo = "";
+$pwd = "";
 
 //CHECKING SUBMIT BUTTON PRESS or NOT.
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST["submitBtn"]!="" && !empty($_POST["submitBtn"])) { 
-    //hier wird auf das im html-tag angegebene 'input_Person_Nachname' zugegriffen
-    //htmlspecialchars noch einbauen
-
 
     isset($_POST["input_Person_Nachname"]) && is_string($_POST["input_Person_Nachname"]) ? $nachname = trim($_POST["input_Person_Nachname"]) : $nachname= "";
     isset($_POST["input_Person_Vorname"]) && is_string($_POST["input_Person_Vorname"]) ? $vorname = trim($_POST["input_Person_Vorname"]) : $vorname= "";
@@ -26,6 +24,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
     isset($_POST["input_Person_Ort"]) && is_string($_POST["input_Person_Ort"]) ? $ort = trim($_POST["input_Person_Ort"]) : $ort= "";
     isset($_POST["input_Person_SVNr"]) && is_string($_POST["input_Person_SVNr"]) ? $svnr = trim($_POST["input_Person_SVNr"]) : $svnr= "";
     isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim($_POST["input_Person_Email"]) : $email= "";
+    isset($_POST["input_Person_Passwort"]) && is_string($_POST["input_Person_Passwort"]) ? $pwd = trim($_POST["input_Person_Passwort"]) : $pwd= "";
+
+
+
+    //------------------------------------------------------------------------------
+    //Passwort peppern und hashen vor dem Eintrag in die Datenbank
+    //MUSS NOCH GEMACHT WERDEN
+    
+    //Passwort peppern, sprich mit dem Pepper-String mischen für erhöhte Sicherheit. 
+    //Pepper-String siehe config.php
+    $pwd_peppered = hash_hmac ("sha256", $pwd, $pepper);
+
+    //Passwort hashen -> dieser Passwort-Hash wird dann i.d. Datenbank eingetragen
+    $pwd_hashed = password_hash($pwd_peppered, PASSWORD_DEFAULT);
+    //------------------------------------------------------------------------------
+
+
 
     //auslesen der Checkbox!!!
     //$stammkunde = var_dump(isset($_POST["input_Person_Stammkunde"]));
@@ -39,7 +54,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
 
 
     try {
-        $stmt = $conn->prepare("INSERT INTO `person` (
+
+        //sql-Anweisung mit zu bindenden Parametern für das prepare-Statement
+        //prepare-Statements sind wichtig, um SQL-Injection vorzubeugen
+        $sql = "
+        INSERT INTO `person` (
             Person_Nachname,
             Person_Vorname,
             Person_Strasse,
@@ -49,7 +68,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
             Person_Email,
             Person_Stammkunde,
             Person_Geschlecht,
-            Person_Abonnement
+            Person_Abonnement,
+            Person_Passwort
             )
             VALUES (
             :person_nachname, 
@@ -61,22 +81,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
             :person_email, 
             :person_stammkunde,
             :person_geschlecht, 
-            :person_abonnement
+            :person_abonnement,
+            :person_passwort
             )
-        ");
+        ";
 
-        $stmt->bindValue(':person_nachname', $nachname);
-        $stmt->bindValue(':person_vorname', $vorname);
-        $stmt->bindValue(':person_strasse', $strasse);
-        $stmt->bindValue(':person_plz', $plz);
-        $stmt->bindValue(':person_ort', $ort);
-        $stmt->bindValue(':person_svnr', $svnr);
-        $stmt->bindValue(':person_email', $email);
-        $stmt->bindValue(':person_stammkunde', $stammkunde);
-        $stmt->bindValue(':person_geschlecht', $geschlecht);
-        $stmt->bindValue(':person_abonnement', $abo);
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindParam(':person_nachname', $nachname);
+        $stmt->bindParam(':person_vorname', $vorname);
+        $stmt->bindParam(':person_strasse', $strasse);
+        $stmt->bindParam(':person_plz', $plz);
+        $stmt->bindParam(':person_ort', $ort);
+        $stmt->bindParam(':person_svnr', $svnr);
+        $stmt->bindParam(':person_email', $email);
+        $stmt->bindParam(':person_stammkunde', $stammkunde);
+        $stmt->bindParam(':person_geschlecht', $geschlecht);
+        $stmt->bindParam(':person_abonnement', $abo);
+        $stmt->bindParam(':person_passwort', $pwd_hashed);
         
         $stmt->execute();
+        echo "Id des eingefügten Datensatzes: ".$conn->lastInsertId()."<br>";
     
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -127,7 +153,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
         <input type="text" name="input_Person_SVNr" id="input_Person_SVNr" class="form-control" placeholder="SVNr">
 
         <label for="input_Person_Email" class="sr-only">Email-Adresse</label>
-        <input type="email" name="input_Person_Email" id="input_Person_Email" class="form-control" placeholder="Email-Adresse">
+        <input type="email" name="input_Person_Email" id="input_Person_Email" class="form-control" placeholder="Email-Adresse" required>
 
 
         <div class="checkbox mt-5">
@@ -161,9 +187,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
             <option value="mittel">mittel</option>
             <option value="groß">groß</option>
         </select>
-        <div class="invalid-feedback">
-        Bitte wählen sie ein gültiges Abonnement.
-        </div>
+
+        <label for="input_Person_Passwort" class="sr-only">Passwort</label>
+        <input type="password" name="input_Person_Passwort" id="input_Person_Passwort" class="form-control" placeholder="Passwort" required>
 
       <input name="submitBtn" class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn" value="Anmelden"></button>
     </form>
