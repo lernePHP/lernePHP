@@ -1,3 +1,6 @@
+# QR-Code generator
+https://www.the-qrcode-generator.com/de/
+
 # config.php
 hier können Servername, Datenbankname, Username und Passwort eingestellt werden.
 
