@@ -239,18 +239,6 @@ function checkForm()
 		</table>
 	</article>	
 	
-	<article class="box formular">
-	  <table>
-		  <tr>
-			<td colspan="2">              
-				<input type='checkbox' name='kornati_cup' value='1'> Kornati-Cup 
-				<?php
-                include $_SERVER['DOCUMENT_ROOT'].'/kornati_cup_popup_oeffnen.php';
-                ?>    
-            </td> 
-		  </tr>
-		</table>
-	</article>	
 	
 	<article class="box formular">
 	  <table>
@@ -351,66 +339,6 @@ function checkForm()
 		  </tr>
 		</table>
 	</article>		
-	
-	<article class="box formular">
-	  <table>
-		  <tr>
-			<td colspan="2">
-				<input type="checkbox" name="offene_klasse_mit_spi" value="1" checked> Offene Klasse mit Spi
-			</td>
-		  </tr>
-		</table>
-	</article>	
-	
-	<article class="box formular">
-	  <table>
-		  <tr>
-			<td colspan="2">
-				<input type="checkbox" name="offene_klasse_ohne_spi" value="1" checked> Offene Klasse ohne Spi
-			</td>
-		  </tr>
-		</table>
-	</article>	
-	
-	<article class="box2 formular">
-	  <table>
-		  <tr>
-			<td colspan="2">Disclaimer deutsch:</td>
-		  </tr>
-		</table>
-	</article>	
-
-	<article class="box2 formular">
-	  <table>
-		  <tr>
-			<td colspan="2"><textarea name="Disclaimer" style="width: 100%;"></textarea></td>
-		  </tr>
-		</table>
-	</article>	
-	
-	<article class="box2 formular">
-	  <table>
-		  <tr>
-			<td colspan="2">Disclaimer englisch:</td>
-		  </tr>
-		</table>
-	</article>	
-
-	<article class="box2 formular">
-	  <table>
-		  <tr>
-			<td colspan="2"><textarea name="Disclaimer_englisch" style="width: 100%;"></textarea></td>
-		  </tr>
-		</table>
-	</article>	
-	
-	<article class="box2 formular">
-	  <table>
-		  <tr>
-			<td colspan="2">Pfad zum Veranstaltungslogo:</td>
-		  </tr>
-		</table>
-	</article>	
 
 	<article class="box2 formular">
 	  <table>
