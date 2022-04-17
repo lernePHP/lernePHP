@@ -4,13 +4,13 @@ require_once 'connection.php';
 
 //hartcodiert, d.h. der Aufruf von bsp_PDO_select.php funktioniert so genau EINMAL
 //danach verursachen diese Werte einen fehler, weil manche doppelten Werte nicht erlaubt sind.
-$nachname ="Schmidleitner";
-$vorname = "Max";
-$strasse = "Abtsdorf 137";
-$plz = "A-4864";
-$ort = "Attersee";
+$nachname ="Müller";
+$vorname = "Hans";
+$strasse = "Buxdehude 1";
+$plz = "A-1010";
+$ort = "Wien";
 $svnr = "4532240202";
-$email = "max@sportconsult.at";
+$email = "hans.mueller@gmail.com";
 $stammkunde = "1";
 $geschlecht = "m";
 $abo = "klein";

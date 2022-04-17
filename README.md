@@ -1,6 +1,3 @@
-# QR-Code generator
-https://www.the-qrcode-generator.com/de/
-
 # config.php
 hier können Servername, Datenbankname, Username und Passwort eingestellt werden.
 
@@ -61,6 +58,10 @@ enthält ein Formular-Layout mit den gängigsten Elementen
 - https://werner-zenk.de/tipps/erster_eintrag_in_eine_mysql-datenbank_2.php#db4
 - https://www.php.net/manual/de/langref.php
 - https://www.php.net/manual/de/function.password-hash.php
+
+# QR-Code generator
+https://www.the-qrcode-generator.com/de/
+
 <!---
 - 👋 Hi, I’m @lernePHP Das ist mein erstes github repository
 - 👀 I’m interested in ...
