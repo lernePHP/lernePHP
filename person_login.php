@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
 
 
 
-//SELECT `Person_Email`, `Person_Passwort` FROM `person` WHERE `Person_Email` = 'michaela@sportconsult.at'
+//SELECT `Person_Email`, `Person_Passwort` FROM `person` WHERE `Person_Email` = 'markus@gmail.com'
     try {
         
         $stmt = $conn->prepare("SELECT `Person_Email`, `Person_Passwort` FROM `person` WHERE `Person_Email` = :email");

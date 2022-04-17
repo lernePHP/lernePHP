@@ -664,7 +664,7 @@ function formausgeben($nachname_h= "", $vorname_h ="", $strasse_h = "", $plz_h="
 	?>   
 
 		<tr>
-			<td align="left" bgcolor="#FF0000">Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Yachtcharter!
+			<td align="left" bgcolor="#FF0000">Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Company!
 			</td>
 		</tr>
 	<?php 

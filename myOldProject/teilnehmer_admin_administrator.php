@@ -671,7 +671,7 @@ function formausgeben($nenngeld_befreiung_h=0,$barzahlung_h=0,$restzahlung_versc
 		?>   
     		<tr>
                 <td align="left" bgcolor="#FF0000">
-                	Fehler beim Versenden der Erst-Email inklusive Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Yachtcharter!
+                	Fehler beim Versenden der Erst-Email inklusive Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Company!
                 </td>
             </tr>
 		<?php 
@@ -681,7 +681,7 @@ function formausgeben($nenngeld_befreiung_h=0,$barzahlung_h=0,$restzahlung_versc
 		?>   
     		<tr>
                 <td align="left" bgcolor="#FF0000">
-                	Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Yachtcharter!
+                	Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Company!
                 </td>
             </tr>
 		<?php 			

@@ -542,7 +542,7 @@ AUT
  0 
 </td>
 <td align='left'>
-CSI YACHTCHARTER
+CSI Company
 </td>
 <td align='left'>
 Georg Ondrej
@@ -650,7 +650,7 @@ AUT
  0 
 </td>
 <td align='left'>
-Yachtcharter Buchinger
+Company Buchinger
 </td>
 <td align='left'>
 Johann Buchinger

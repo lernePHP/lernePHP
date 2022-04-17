@@ -3,10 +3,10 @@
 //Hier wird - zur Ausgabe in ein pdf-File über zertifikate_dateninhalte_aufbauen.php - ein String aufgebaut
 //in dem alle Namen einer Mannschaft, inklusive Skipper, enthalten sind. Beginnend mit dem Skipper, gefolgt von den
 //crewmitgliedern. Nach dem Format:
-//Gert Schmidleitner, Michaela Schmidleitner, Max Schmidleitner, Carolin Schmidleitner
+//Gert Hammer, Markus Hammer, Max Hammer, Carolin Hammer
 //Falls die Länge des Strings länger ist wie die Übergebene Anzahl der Zeichen ($max_anz_zeichen), so soll
 //ein Zeilenumbruch ("\n") eingefügt werden, also ungefähr so:
-//"Gert Schmidleitner, Max Schmidleitner, Michaela Schmidleitner, Carolin Schmidleitner \n
+//"Gert Hammer, Max Hammer, Markus Hammer, Carolin Hammer \n
 //Kurt L. Müller, Sabine Meier, Gudrun Schaffer"
 //
 //Variablen-Eingang: (muss in der Datei, in der das Include eingefügt wird, definiert sein)

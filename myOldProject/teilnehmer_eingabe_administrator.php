@@ -481,7 +481,7 @@ function formverarbeiten()
 					//$email enthält hier die Email-Adresse des Teilnehmers. Der soll aber keine Email erhalten, daher überschreibe ich hier die Variable mit Iris' Email-Adresse
 					//dadurch erhält nur sie die Email
 					
-					//$email = "michaela@sportconsult.at";
+					//$email = "markus@gmail.com";
 					$email = "iris@Xabel-yachting.com";
 					
 					
