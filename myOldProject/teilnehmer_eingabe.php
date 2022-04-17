@@ -474,27 +474,15 @@ function formverarbeiten()
 						</head>
 						<body>
 						<table>
-						<tr><td colspan="2">Lieber Skipper,</td></tr>
+						<tr><td colspan="2">Lieber Teilnehmer!,</td></tr>
 						<tr><td colspan="2">&nbsp;</td></tr>
-						<tr><td colspan="2">vielen Dank f&uuml;r die unverbindliche Anmeldung zu unserer Regatta <strong>'.utf8_decode($regatta_name).'</strong>.</td></tr>
-						<tr><td colspan="2">Wir werden Sie rechtzeitig kontaktieren, sobald wir n&auml;here Daten f&uuml;r die Yachtreservierung und Anmeldung zur Regatta ben&ouml;tigen.</td></tr>
-						<tr><td colspan="2">Bei Fragen stehen wir Ihnen jederzeit gerne zur Verf&uuml;gung.</td></tr>				
-						<tr><td colspan="2">&nbsp;</td></tr>
-						<tr><td colspan="2">Mit freundlichen Gr&uuml;&szlig;en</td></tr>
-						<tr><td colspan="2">Ihr Xabel-Yachting-Team</td></tr>
 						</table>
 						</body>
 						</html>';	
 						
 					$message_plain_text='
 						Lieber Skipper, \r\n
-						vielen Dank f&uuml;r die unverbindliche Anmeldung zu unserer Regatta <strong>'.utf8_decode($regatta_name).'</strong>.\r\n
-						Wir werden Sie rechtzeitig kontaktieren, sobald wir n&auml;here Daten für die Yachtreservierung und Anmeldung zur Regatta ben&ouml;tigen.\r\n
-						Bei Fragen stehen wir Ihnen jederzeit gerne zur Verf&uuml;gung.\r\n			
-						\r\n
-						Mit freundlichen Gr&uuml;&szlig;en\r\n
-						Ihr Xabel-Yachting-Team
-						';
+						vielen Dank f&uuml;r die unverbindliche Anmeldung zu unserer Regatta <strong>';
 					//Betreff-Zeile der Email
 					$subject=utf8_decode($regatta_name)." - Ihre unverbindliche Anmeldung";	
 				}
@@ -513,23 +501,12 @@ function formverarbeiten()
 						<tr><td colspan="2">Dear skipper,</td></tr>
 						<tr><td colspan="2">&nbsp;</td></tr>
 						<tr><td colspan="2">thank you for registering (non-binding) to our regatta <strong>'.utf8_decode($regatta_name).'</strong>.</td></tr>
-						<tr><td colspan="2">We will contact you as soon as we need more information concerning your charter or your registration.</td></tr>
-						<tr><td colspan="2">For questions please feel free to contact us.</td></tr>				
-						<tr><td colspan="2">&nbsp;</td></tr>
-						<tr><td colspan="2">With best regards</td></tr>
-						<tr><td colspan="2">Your Xabel-Yachting-Team</td></tr>
 						</table>
 						</body>
 						</html>';
 						
 					$message_plain_text='
 						Dear skipper, \r\n
-						thank you for registering (non-binding) to our regatta <strong>'.utf8_decode($regatta_name).'</strong>.\r\n
-						We will contact you as soon as we need more information concerning your charter or your registration.\r\n
-						For questions please feel free to contact us.\r\n			
-						\r\n
-						With best regards\r\n
-						Your Xabel-Yachting-Team
 						';
 				//Betreff-Zeile der Email
 				$subject=utf8_decode($regatta_name)." - your non-binding registration";
