@@ -42,7 +42,7 @@ if ($_GET['erst_aufruf'] == 1) {
 	//übergebenen Teilnehmer selektieren und die Werte in die Variablen speichern
 	          //sql-Statement erstellen
 	$sql="SELECT regatta_fid,nenngeld_befreiung,Barzahlung,restzahlung_verschickt,Nachname,Vorname,Strasse,PLZ,Ort,Land,Email,Club,Shirt,Sponsor,Bootstype,gruppen_fid,Anzahl_Crew, ";
-	$sql.="ersteEmailAnTnOk, ersteEmailAnPitterOk, ersteEmailAnTnFehlerBehoben,ersteEmailAnPitterFehlerBehoben, ";
+	$sql.="ersteEmailAnTnOk, ersteEmailAnXabelOk, ersteEmailAnTnFehlerBehoben,ersteEmailAnXabelFehlerBehoben, ";
 	$sql.="bootsname,tiefgang,mobil_nummer_zu_hause,mobil_nummer_vor_ort,oesv_nr,geb_datum,geb_ort,staatsbuergerschaft_Nr, ";
 	$sql.="passnr,unterschrieben,eigene_rg_adresse,rg_zeile1,rg_zeile2,rg_zeile3,rg_zeile4 ";
 	$sql.="FROM tbl_teilnehmer_boot ";
@@ -93,11 +93,11 @@ if ($_GET['erst_aufruf'] == 1) {
 		$rg_zeile2_h=	$akt_zeile["rg_zeile2"];	
 		$rg_zeile3_h=	$akt_zeile["rg_zeile3"];	
 		$rg_zeile4_h=	$akt_zeile["rg_zeile4"];		
-		//ersteEmailAnTnOk, ersteEmailAnPitterOk, ersteEmailAnTnFehlerBehoben,ersteEmailAnPitterFehlerBehoben
+		//ersteEmailAnTnOk, ersteEmailAnXabelOk, ersteEmailAnTnFehlerBehoben,ersteEmailAnXabelFehlerBehoben
 		$_SESSION['sess_ersteEmailAnTnOk'] = $akt_zeile["ersteEmailAnTnOk"];
-		$_SESSION['sess_ersteEmailAnPitterOk'] = $akt_zeile["ersteEmailAnPitterOk"];
+		$_SESSION['sess_ersteEmailAnXabelOk'] = $akt_zeile["ersteEmailAnXabelOk"];
 		$_SESSION['sess_ersteEmailAnTnFehlerBehoben'] = $akt_zeile["ersteEmailAnTnFehlerBehoben"];
-		$_SESSION['sess_ersteEmailAnPitterFehlerBehoben'] = $akt_zeile["ersteEmailAnPitterFehlerBehoben"];	
+		$_SESSION['sess_ersteEmailAnXabelFehlerBehoben'] = $akt_zeile["ersteEmailAnXabelFehlerBehoben"];	
 		$fehler="";	
 	}	//ENDE while
 }	//ENDE if ($erst_aufruf == 1)
@@ -640,7 +640,7 @@ function formausgeben($nenngeld_befreiung_h=0,$barzahlung_h=0,$restzahlung_versc
 		$emailFehlerNichtBekannt = 1;
 	}
 	
-	if (((!$_SESSION['sess_ersteEmailAnTnOk']) && (!$_SESSION['sess_ersteEmailAnTnFehlerBehoben'])) || ((!$_SESSION['sess_ersteEmailAnPitterOk']) && (!$_SESSION['sess_ersteEmailAnPitterFehlerBehoben'])))
+	if (((!$_SESSION['sess_ersteEmailAnTnOk']) && (!$_SESSION['sess_ersteEmailAnTnFehlerBehoben'])) || ((!$_SESSION['sess_ersteEmailAnXabelOk']) && (!$_SESSION['sess_ersteEmailAnXabelFehlerBehoben'])))
 	{
 		$emailFehlerSchreiben = 1;
 	}
@@ -671,7 +671,7 @@ function formausgeben($nenngeld_befreiung_h=0,$barzahlung_h=0,$restzahlung_versc
 		?>   
     		<tr>
                 <td align="left" bgcolor="#FF0000">
-                	Fehler beim Versenden der Erst-Email inklusive Zugangsdaten! <br>Wenden Sie sich bitte an Pitter Yachtcharter!
+                	Fehler beim Versenden der Erst-Email inklusive Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Yachtcharter!
                 </td>
             </tr>
 		<?php 
@@ -681,7 +681,7 @@ function formausgeben($nenngeld_befreiung_h=0,$barzahlung_h=0,$restzahlung_versc
 		?>   
     		<tr>
                 <td align="left" bgcolor="#FF0000">
-                	Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Pitter Yachtcharter!
+                	Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Yachtcharter!
                 </td>
             </tr>
 		<?php 			

@@ -52,7 +52,7 @@ if ($_GET['erst_aufruf'] == 1) {
 	//übergebenen Teilnehmer selektieren und die Werte in die Variablen speichern
 	          //sql-Statement erstellen
 	$sql="SELECT regatta_fid,Nachname,Vorname,Strasse,PLZ,Ort,Land,Email,Club,Shirt,Sponsor,Bootstype,gruppen_fid,Anzahl_Crew, ";
-	$sql.="ersteEmailAnTnOk, ersteEmailAnPitterOk, ersteEmailAnTnFehlerBehoben,ersteEmailAnPitterFehlerBehoben, ";
+	$sql.="ersteEmailAnTnOk, ersteEmailAnXabelOk, ersteEmailAnTnFehlerBehoben,ersteEmailAnXabelFehlerBehoben, ";
 	$sql.="bootsname,tiefgang,mobil_nummer_zu_hause,mobil_nummer_vor_ort,oesv_nr,geb_datum,geb_ort,staatsbuergerschaft_Nr, ";
 	$sql.="passnr,unterschrieben,eigene_rg_adresse,rg_zeile1,rg_zeile2,rg_zeile3,rg_zeile4 ";
 	$sql.="FROM tbl_teilnehmer_boot ";
@@ -100,9 +100,9 @@ if ($_GET['erst_aufruf'] == 1) {
 		$rg_zeile3_h=	$akt_zeile["rg_zeile3"];	
 		$rg_zeile4_h=	$akt_zeile["rg_zeile4"];	
 		$_SESSION['sess_ersteEmailAnTnOk'] = $akt_zeile["ersteEmailAnTnOk"];
-		$_SESSION['sess_ersteEmailAnPitterOk'] = $akt_zeile["ersteEmailAnPitterOk"];
+		$_SESSION['sess_ersteEmailAnXabelOk'] = $akt_zeile["ersteEmailAnXabelOk"];
 		$_SESSION['sess_ersteEmailAnTnFehlerBehoben'] = $akt_zeile["ersteEmailAnTnFehlerBehoben"];
-		$_SESSION['sess_ersteEmailAnPitterFehlerBehoben'] = $akt_zeile["ersteEmailAnPitterFehlerBehoben"];	
+		$_SESSION['sess_ersteEmailAnXabelFehlerBehoben'] = $akt_zeile["ersteEmailAnXabelFehlerBehoben"];	
 		$fehler="";	
 	}	//ENDE while
 }	//ENDE if ($erst_aufruf == 1)
@@ -632,8 +632,8 @@ function formausgeben($nachname_h= "", $vorname_h ="", $strasse_h = "", $plz_h="
 
 		$emailFehlerNichtBekannt = 1;
 	}
-	//$_SESSION['ersteEmailAnTnOk'], $_SESSION['ersteEmailAnPitterOk'], $_SESSION['ersteEmailAnTnFehlerBehoben'],$_SESSION['ersteEmailAnPitterFehlerBehoben']
-	if (((!$_SESSION['sess_ersteEmailAnTnOk']) && (!$_SESSION['sess_ersteEmailAnTnFehlerBehoben'])) || ((!$_SESSION['sess_ersteEmailAnPitterOk']) && (!$_SESSION['sess_ersteEmailAnPitterFehlerBehoben'])))
+	//$_SESSION['ersteEmailAnTnOk'], $_SESSION['ersteEmailAnXabelOk'], $_SESSION['ersteEmailAnTnFehlerBehoben'],$_SESSION['ersteEmailAnXabelFehlerBehoben']
+	if (((!$_SESSION['sess_ersteEmailAnTnOk']) && (!$_SESSION['sess_ersteEmailAnTnFehlerBehoben'])) || ((!$_SESSION['sess_ersteEmailAnXabelOk']) && (!$_SESSION['sess_ersteEmailAnXabelFehlerBehoben'])))
 	{
 		$emailFehlerSchreiben = 1;
 	}
@@ -664,7 +664,7 @@ function formausgeben($nachname_h= "", $vorname_h ="", $strasse_h = "", $plz_h="
 	?>   
 
 		<tr>
-			<td align="left" bgcolor="#FF0000">Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Pitter Yachtcharter!
+			<td align="left" bgcolor="#FF0000">Fehler beim Versenden der Erst-Email inklusive Anzahlungs-Rechnung und Zugangsdaten! <br>Wenden Sie sich bitte an Xabel Yachtcharter!
 			</td>
 		</tr>
 	<?php 

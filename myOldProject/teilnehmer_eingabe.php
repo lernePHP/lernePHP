@@ -246,7 +246,7 @@ function formverarbeiten()
 						<tr><td>Pa&szlig;wort: </td><td>'.utf8_decode($passwort).'</td></tr>
 						<tr><td colspan="2">&nbsp;</td></tr>
 						<tr><td colspan="2">Mit freundlichen Gr&uuml;&szlig;en</td></tr>
-						<tr><td colspan="2">Ihr Pitter-Yachting-Team</td></tr>
+						<tr><td colspan="2">Ihr Xabel-Yachting-Team</td></tr>
 						</table>
 						</body>
 						</html>';	
@@ -263,7 +263,7 @@ function formverarbeiten()
 						Pa&szlig;wort: '.utf8_decode($passwort).'\r\n
 						\r\n
 						Mit freundlichen Gr&uuml;&szlig;en\r\n
-						Ihr Pitter-Yachting-Team
+						Ihr Xabel-Yachting-Team
 						';
 					
 					
@@ -303,7 +303,7 @@ function formverarbeiten()
 						<tr><td>Password: </td><td>'.utf8_decode($passwort).'</td></tr>
 						<tr><td colspan="2">&nbsp;</td></tr>
 						<tr><td colspan="2">With best regards</td></tr>
-						<tr><td colspan="2">Your Pitter-Yachting-Team</td></tr>
+						<tr><td colspan="2">Your Xabel-Yachting-Team</td></tr>
 						</table>
 						</body>
 						</html>';
@@ -320,7 +320,7 @@ function formverarbeiten()
 						Password: '.utf8_decode($passwort).'\r\n
 						\r\n
 						With best regards\r\n
-						Your Pitter-Yachting-Team
+						Your Xabel-Yachting-Team
 						';
 					
 					//Betreff-Zeile der Email
@@ -438,7 +438,7 @@ function formverarbeiten()
 					//dadurch erhält nur sie die Email
 					
 					//$email = "michaela@sportconsult.at";
-					$email = "iris@pitter-yachting.com";
+					$email = "iris@Xabel-yachting.com";
 					
 					//Betreff ändern, damit Iris gleich auffällt, dass sie die Rechnung kontrollieren und manuell an den Teilnehmer senden muss
 					$subject="Zur Kontrolle und manuellen Versendung der Rechnung an den Teilnehmer - Anmeldung zur Regatta ".$regatta_name;
@@ -481,7 +481,7 @@ function formverarbeiten()
 						<tr><td colspan="2">Bei Fragen stehen wir Ihnen jederzeit gerne zur Verf&uuml;gung.</td></tr>				
 						<tr><td colspan="2">&nbsp;</td></tr>
 						<tr><td colspan="2">Mit freundlichen Gr&uuml;&szlig;en</td></tr>
-						<tr><td colspan="2">Ihr Pitter-Yachting-Team</td></tr>
+						<tr><td colspan="2">Ihr Xabel-Yachting-Team</td></tr>
 						</table>
 						</body>
 						</html>';	
@@ -493,7 +493,7 @@ function formverarbeiten()
 						Bei Fragen stehen wir Ihnen jederzeit gerne zur Verf&uuml;gung.\r\n			
 						\r\n
 						Mit freundlichen Gr&uuml;&szlig;en\r\n
-						Ihr Pitter-Yachting-Team
+						Ihr Xabel-Yachting-Team
 						';
 					//Betreff-Zeile der Email
 					$subject=utf8_decode($regatta_name)." - Ihre unverbindliche Anmeldung";	
@@ -517,7 +517,7 @@ function formverarbeiten()
 						<tr><td colspan="2">For questions please feel free to contact us.</td></tr>				
 						<tr><td colspan="2">&nbsp;</td></tr>
 						<tr><td colspan="2">With best regards</td></tr>
-						<tr><td colspan="2">Your Pitter-Yachting-Team</td></tr>
+						<tr><td colspan="2">Your Xabel-Yachting-Team</td></tr>
 						</table>
 						</body>
 						</html>';
@@ -529,7 +529,7 @@ function formverarbeiten()
 						For questions please feel free to contact us.\r\n			
 						\r\n
 						With best regards\r\n
-						Your Pitter-Yachting-Team
+						Your Xabel-Yachting-Team
 						';
 				//Betreff-Zeile der Email
 				$subject=utf8_decode($regatta_name)." - your non-binding registration";
@@ -545,15 +545,15 @@ function formverarbeiten()
 			
 			
 			
-			//Beginn Update ersteEmailAnTnOk und ersteEmailAnPitterOk
+			//Beginn Update ersteEmailAnTnOk und ersteEmailAnXabelOk
 			//sql-Statement erstellen
 			$sql="UPDATE tbl_teilnehmer_boot ";
-			$sql.="SET ersteEmailAnTnOk=".$email_an_teilnehmer.",ersteEmailAnPitterOk=".$versendet." ";	
+			$sql.="SET ersteEmailAnTnOk=".$email_an_teilnehmer.",ersteEmailAnXabelOk=".$versendet." ";	
 			$sql.="WHERE teilnehmer_id=".$teilnehmer_id;
 
 			$statement = $mydb->prepare($sql);
 			if ($statement->execute()) {}
-			//Ende Update ersteEmailAnTnOk und ersteEmailAnPitterOk 
+			//Ende Update ersteEmailAnTnOk und ersteEmailAnXabelOk 
 			
 			
 			

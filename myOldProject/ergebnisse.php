@@ -28,7 +28,7 @@
 
 <div id="topic"><a href="index.php"><img src="bilder/schrift.png" width="330" height="39"></a></div>
 <div id="flags"><?php include 'inc/flags.php';?></div>
-<div id="pitterlogo"><a href="http://www.pitter-yachting.com" target="_new"><img src="bilder/pitter_logo.png" width="100%" border="0"></a></div>
+<div id="Xabellogo"><a href="http://www.Xabel-yachting.com" target="_new"><img src="bilder/Xabel_logo.png" width="100%" border="0"></a></div>
 
 <?php include 'inc/sujet.php';?>
  

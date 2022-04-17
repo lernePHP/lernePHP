@@ -4,7 +4,7 @@
 	
 <link href="regatta_css.css" rel="stylesheet" type="text/css" />	
 	
-<title>Test Michi Import pitter-regatten, 04.05.2018 - 06.05.2018, </title>
+<title>Test Markus Import Xabel-regatten, 04.05.2018 - 06.05.2018, </title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">		
@@ -19,7 +19,7 @@
 <table cellpadding='0' cellspacing='0' align='center'><tr><td>
 <p align='center'><font size='+1'></font><p>
 <p align='center'><font size='+1'></font><br>
-<font size='+1'>Test Michi Import pitter-regatten</font><br>
+<font size='+1'>Test Markus Import Xabel-regatten</font><br>
 04.05.2018 - 06.05.2018<p>
 <p align='center'><font size='+1'>Meldeliste</font>
 </font><br><br>
@@ -707,7 +707,7 @@ AUT
 
 </td>
 <td align='left'>
-Klaus Pitter
+Klaus Xabel
 
 </td>
 <td align='left'>
