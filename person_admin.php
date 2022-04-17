@@ -4,6 +4,8 @@
 require_once 'config.php';
 require_once 'connection.php';
 
+
+//Aufruf z.B.: person_admin?person_id=23
 $person_id = $_GET['person_id'];
 $nachname ="";
 $vorname = "";

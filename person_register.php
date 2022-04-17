@@ -164,7 +164,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
         
         function isValidSVNR(svnr)
         {
-            console.log("in isValidSVNR");
+            //console.log("in isValidSVNR");
             //------------------
             //Länge überprüfen
             if (svnr.length != 10) {

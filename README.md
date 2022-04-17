@@ -1,3 +1,11 @@
+# bootstrap einbinden --> siehe bootstrap_Vorlage.php
+- Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/ bzw. https://getbootstrap.com/docs/5.1/examples/checkout/
+- cdn-Variante genügt. Bootstrap muss nicht unbedingt installiert werden
+
+# bootstrap_Vorlage.php
+enthält ein Formular-Layout mit den gängigsten Elementen
+
+
 # config.php
 hier können Servername, Datenbankname, Username und Passwort eingestellt werden.
 
@@ -8,7 +16,7 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 
 # bsp_PDO_select.php, _query.php, _insert.php, _delete.php
 **Achtung!**
-**config.php und connection.php müssen vorhanden sein. Sie werden in php_overview.php eingebunden**
+**config.php und connection.php müssen vorhanden sein. Sie werden eingebunden**
 - enthält die wichtigsten Php-Statements
 - SELECT, UPDATE, DELETE-Statesments erstellen und abschicken.
 - SELECT-Statements durchwandern
@@ -26,9 +34,12 @@ Die Stammdaten der Person inklusive selbst gewählten Passwort werden eingegeben
 Das Passwort wird mit dem Pepper (String-Variable in der config.php) gemischt, danach gehasht und so in der Datenbank abgespeichert.
 Beim Login passiert der umgekehrte Vorgang. Wenn die Passwörter ident sind, dann kommt eine entsprechende Meldung.
 
+Inklusive Javascript-Funktionen checkForm() und Überprüfung während der Eingabe, ob eine Sozialversicherungsnummer gültig ist oder nicht.
+Anzeige der Gültigkeit mittels QR-Code valid.png bzw. notvalid.png (siehe dazu Unterordner images im Projekt)
+
 
 # person_login.php
-überprüft, ob Benutzername vorhanden und Passwort mit dem in der Datenbank matcht.
+überprüft, ob Benutzername vorhanden und Passwort mit dem in der Datenbank matcht. Inklusive gehashtem und gepeppertem Passwort.
 
 
 
@@ -44,12 +55,7 @@ Mit
 - Radiobuttons einer Option-Group
 
 
-# bootstrap einbinden --> siehe bootstrap_Vorlage.php
-- Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/ bzw. https://getbootstrap.com/docs/5.1/examples/checkout/
-- cdn-Variante genügt. Bootstrap muss nicht unbedingt installiert werden
 
-# bootstrap_Vorlage.php
-enthält ein Formular-Layout mit den gängigsten Elementen
 
 
 # weiterführende Webseiten:
