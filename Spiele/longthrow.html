@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Weitwurf</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!---------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/longthrow.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <nav id="menu">
+                <i id="close" class="far fa-window-close" onClick="closeMenu()"></i>
+                <ul>
+                    <li><a href="index.html" onClick="closeMenu()">Home</a></li>
+                    <li><a href="longthrow.html" onClick="closeMenu()">Handyweitwurf</a></li>
+                    <li><a href="scissorsStonePaper.html" onClick="closeMenu()">Schere-Stein-Papier</a></li>
+                    <li><a href="guessNumbers.html" onClick="closeMenu()">Zahlen-Raten</a></li>
+                    <li><a href="codeBreaker.html" onClick="closeMenu()">Code Breaker</a></li>
+                </ul>
+            </nav>
+            <i id="mobilemenu" class="fa fa-bars" onclick="openMenu()"></i>
+        </header>
+        <div id = "backgroundImage"></div>
+        <main>
+            <h2>Handy Weitwurf</h2>
+            <div id="start">
+                <label for="nrOfTries">Wieviel Versuche möchtest Du? </label>
+                <input type="number" name="nrOfTries" id="nrOfTries" min="1"  value="5">
+                <p>Auf welchem Planeten möchtes Du spielen?</p>
+                <div id="planetContainer">
+                    <div class="planet" id="earth" onclick="startGame('Erde', 9.81)" >Erde</div>
+                    <div class="planet" id="moon" onclick="startGame('Mond', 1.62)" >Mond</div>
+                    <div class="planet" id="mars" onclick="startGame('Mars', 3.69)" >Mars</div>
+                    <div class="planet" id="jupiter" onclick="startGame('Jupiter', 24.79)" >Jupiter</div>
+                </div>
+            </div>
+
+            <div id="gameContainer" class="inactive">
+                <div>
+                    <p id="chosenPlanet"></p>
+                    <p>Das Monster ist <span id="distance"></span> m entfernt.</p>
+                    <div class="form-container">
+                        <label for="angle">Winkel in Grad (Werte von 1 bis 90): </label>
+                        <input type="number" name="angleInput" id="angleInput" min="1" max="90">
+                        <label for="speed">Geschwindigkeit in m/s: </label>
+                        <input type="number" name="speedInput" id="speedInput">
+                        <button onclick="throwMobile()">Werfen</button>
+                    </div>
+                </div>
+                <div id="result">
+                    <p>noch <span id="triesLeft"></span> Versuch(e) übrig.</p>
+                    <p id="resultTxt" class="inactive">Hier kommt das Ergebnis hin.</p>
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div><a href="imprint.html">Impressum</a></div>
+            <div>&copy;Michaela Schmidleitner</div>
+        </footer>
+    </div>
+
+
+
+
+    <script rel="text/Javascript" src="js/lib.js"></script>
+    <script rel="text/Javascript" src="js/script.js"></script>
+    <script rel="text/Javascript" src="js/longthrow.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative; 
+    z-index: 200;
+}
+
+#backgroundImage {
+    display: none;
+    position: fixed;
+    top: 80px;
+    z-index: 100;
+    /*background-image: url(../img/earth.png);*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2; 
+    width: 100%;
+    height: 40vh;
+}
+
+#nrOfTries {
+    width: 50px;
+    border-radius: 5px;
+    border-color: var(--secondary);
+}
+#planetContainer {
+    display: grid;
+    grid-template-columns: 160px 160px;
+    grid-template-rows: 160px 160px;
+    gap: 10px;
+    grid-template-areas: 
+        "earth moon"
+        "mars jupiter"
+    ;
+}
+
+.planet {
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    /* das bezieht sich auf die Schrift */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px #000;
+    transition: transform 0.7s;
+}
+@media all and (min-width:768px) {
+    .planet:hover {
+        cursor: pointer;
+        font-size: 3rem;
+        transform: scale(1.2, 1.2);
+    }
+}
+
+
+#earth {
+    background-image: url(../img/earth.png);
+}
+#moon {
+    background-image: url(../img/moon.png);
+}
+#mars {
+    background-image: url(../img/mars.png);
+}
+#jupiter {
+    background-image: url(../img/jupiter.png);
+}
+
+#gameContainer {
+    display: none;
+}

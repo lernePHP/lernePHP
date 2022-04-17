@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: rgb(250, 246, 246);
+    --secondary: rgb(148, 3, 3);
+    --linkcolor: rgb(207, 203, 203);
+}
+
+html,body {
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1, h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+h2 {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    /* grid-template-rows: 100px 200px auto 50px; */
+    grid-template-rows: 8vh 80.8vh 8vh;
+    gap: 1.6vh;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+    height: 100vh;
+    width: 100%;
+}
+header {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--secondary);
+}
+
+header nav {
+    z-index: 400;
+}
+header nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+header nav ul li {
+    list-style-type: none;
+}
+
+#menu.active ul li a {
+    color: var(--secondary);
+}
+
+#mobilemenu {
+    color: var(--primary);
+    display: none;
+    padding: 20px;
+}
+#close {
+    display: none;
+}
+
+nav ul li a{
+    padding: 20px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: opacity 300ms;
+}
+
+main {
+    /*padding: 0 20px;*/
+    margin: 0 auto;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 230px;
+    padding: 0;
+}
+
+footer {
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--primary);
+    display: flex;
+    font-weight: 700;
+    justify-content:space-between;
+    padding: 0 20px;
+    position: relative;
+    z-index: 300;
+}
+footer div a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: opacity 300ms;
+}
+
+#popup {
+    display: flex;
+    background-color: var(--primary);
+    box-shadow: 1px 1px 10px 2px #787878;
+    flex-direction: column;
+    height: 15vh;
+    padding: 0 10px;
+    position: absolute;
+    text-align: center;
+    width: 40%;
+    z-index: 20;
+}
+
+div#popup{
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media all and (min-width:768px){
+    nav ul li a:hover {
+        opacity: 0.7;
+    }
+
+    footer div a:hover {
+        opacity: 0.7;
+    }
+}
+
+@media all and (max-width:290px)  {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media all and (max-width:768px) {
+    header nav {
+        transition: all 500ms;
+    }
+
+    #close {
+        display: inline-block;
+        position:absolute;
+        top: 10px;
+        left: 90%;
+    }
+    header nav {
+        background-color: var(--primary);
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left:100vw;
+        padding: 30px;
+        transition: all 500ms;
+    }
+    header nav.active {
+        left: 0;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header nav ul li {
+        padding: 10px 0;
+    }
+    header nav ul li a {
+        padding: 0 30px;
+    }
+   
+    header nav ul li a:active {
+        left: 100vw;
+    }
+    #mobilemenu {
+        display: block;
+    }
+}
+
+.inactive {
+    display: none;
+}
+
+#gameContainer {
+    display: flex;
+}
+
+#gameContainer > div {
+    width: 50%;
+    padding: 10px;
+}
+
+
+div#gameContainerLeft {
+    display: flex;
+    flex-direction: column;
+    padding-left:0;
+}
+div#gameContainerRight {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+}
+
+
+#result {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#result p {
+    font-weight: 700;
+}
+
+@media all and (max-width:568px) {
+    #gameContainer {
+        flex-direction: column;
+    }
+    #gameContainer > div {
+        width: 100%;
+    }
+
+    #popup {
+        width: 80%;
+    }
+    #result {
+        justify-content: flex-start;
+    }
+}
+
+
+
+
+

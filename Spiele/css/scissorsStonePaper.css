@@ -1,0 +1,222 @@
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    width: 80%;
+}
+
+
+#gameContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    height: 40vh;
+    margin: 0 auto;
+    width: 100%;
+}
+#gameContainer > div {
+    width: 60%;
+}
+
+#block1 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    justify-content: space-between;
+    padding-bottom: 2vh;
+    position: relative;
+    text-align: center;
+    width: 80%; 
+}
+.flexcontainer-block1Input {
+    display: flex;
+    flex-direction: column;
+}
+
+#lockBlock1 {
+    display: none;
+    position: absolute;
+    background-color: var(--primary);
+    height: 20vh;
+    padding-bottom: 2vh;
+    top: 0;
+    left:0;
+    opacity: 0.6;
+    width: 100%;
+}
+
+#block2 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+#block2 p{
+    margin: 20px 10px 0 10px;
+    margin-bottom: 0;
+}
+
+input {
+    /*border-color: var(--secondary);*/
+    font-size: 1.1rem;
+    height: 30px;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+div#gameContainerLeft {
+    width: 40%;
+}
+
+div#gameContainerRight {
+    width: 40%;
+}
+
+#info-flex-container {
+    display: flex;
+    justify-content: flex-start;
+}
+.info {
+    padding-right: 15px;
+}
+
+/* ab 970px Device Breite und weniger --> width von main nicht mehr 80% sondern 100% */
+@media all and (max-width:900px)  {
+    main {
+        width: 100%;
+    }
+}
+
+#chooseSymbol {
+    align-items: center;
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+div#chooseSymbol {
+    width: 60%;
+    padding: 0 10px 10px 10px;
+}
+#lockBlock2 {
+    display: none;
+    position: absolute;
+    background-color: var(--primary);
+    height: 10vh;
+    top: 0;
+    left:0;
+    opacity: 0.6;
+    width: 100%;
+    z-index: 100;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/*
+div.symbol {
+    border-style: dashed;
+    border-color: var(--secondary);
+}
+*/
+.symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 30%;
+    height: 5vh;
+    color: var(--primary);
+    transition: transform 0.7s;
+}
+@media all and (min-width:768px) {
+    .symbol:hover {
+        cursor: pointer;
+        color: var(--secondary);
+        font-size: 1.2rem;
+        transform: scale(1.2, 1.2);
+    }
+}
+
+#scissor {
+    background-image: url(../img/scissor.jpg);
+}
+#stone {
+    background-image: url(../img/stone.jpg);
+}
+#paper {
+    background-image: url(../img/paper.jpg);
+}
+
+#currentgame-container {   
+    border-radius: 20px;
+    border-style: double;
+    border-width: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch ;
+    padding: 20px;
+}
+
+.result-item {
+    display: flex;
+    font-weight: 700;
+    justify-content: space-around;
+}
+.result{
+    font-size: 2rem;
+    width: 30%;
+    text-align: center;
+}
+.currentgame-symbol {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    min-width: 30%;
+    transition: transform 0.7s;
+}
+@media all and (max-width:360px) {
+    #currentgame-container {
+        margin-top: 0;
+    }
+    .currentgame-symbol {
+        height: 15vh;
+    }
+}
+
+@media all and (max-width:411px) {
+    div#chooseSymbol {
+        width: 100%;
+        padding: 0 10px 10px 10px;
+    }
+    #gameContainer > div {
+        width: 90%;
+    }
+}
+
+@media all and (max-width:768px) {
+    div#chooseSymbol {
+        width: 80%;
+        padding: 0 10px 10px 10px;
+    }
+}
+
+.middle {
+    min-width: 10px;
+}
+
+
+
+

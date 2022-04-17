@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiele</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!---------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/guessNumbers.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <nav id="menu">
+                <i id="close" class="far fa-window-close" onClick="closeMenu()"></i>
+                <ul>
+                    <li><a href="index.html" onClick="closeMenu()">Home</a></li>
+                    <li><a href="longthrow.html" onClick="closeMenu()">Handyweitwurf</a></li>
+                    <li><a href="scissorsStonePaper.html" onClick="closeMenu()">Schere-Stein-Papier</a></li>
+                    <li><a href="guessNumbers.html" onClick="closeMenu()">Zahlen-Raten</a></li>
+                    <li><a href="codeBreaker.html" onClick="closeMenu()">Code Breaker</a></li>
+                </ul>
+            </nav>
+            <i id="mobilemenu" class="fa fa-bars" onclick="openMenu()"></i>
+        </header>
+        <main>
+            <h2>Zahlen Raten</h2>
+            <div id="inputContainer">
+                <div id="lock"></div>
+                <div class="inputFields">
+                    <div class="flex-inputField">
+                        <label for="upperLimitInput">UpperLimit: </label>
+                        <input type="number" name="upperLimitInput" id="upperLimitInput" min="1"  value="10">
+                    </div>
+                    <div class="flex-inputField">
+                        <label for="nrOfTriesInput">Wieviel Versuche möchtest Du? </label>
+                        <input type="number" name="nrOfTriesInput" id="nrOfTriesInput" min="1"  value="5">
+                    </div>
+                    <button onClick="startGame()">Spiel starten</button>
+                </div>
+            </div>
+
+            <div id="gameContainerPlus">
+                <div id="gameContainer">
+                    <div class="flex-guessedNumbers-container">
+                        <h2>zu klein</h2>
+                        <div id="leftSide" class="flex-guessedNumbers">
+                        </div>
+                    </div>
+                    <div class="flex-guessNumber">
+                        <label for="guessNumberInput">guessNumber</label>
+                        <input type="number" name="guessNumberInput" id="guessNumberInput">
+                        <button onClick="guess()">Los</button>
+                    </div>
+                    <div class="flex-guessedNumbers-container">
+                        <h2>zu groß</h2>
+                        <div id="rightSide" class="flex-guessedNumbers">
+                        </div>
+                    </div>
+                </div>
+                <div><span>noch: </span><span id="nrOfTriesLeft"></span></div>
+            </div>
+
+
+        </main>
+        <footer>
+            <div><a href="imprint.html">Impressum</a></div>
+            <div>&copy;Michaela Schmidleitner</div>
+        </footer>
+    </div>
+
+
+
+
+    <script rel="text/Javascript" src="js/lib.js"></script>
+    <script rel="text/Javascript" src="js/script.js"></script>
+    <script rel="text/Javascript" src="js/guessNumbers.js"></script>
+</body>
+</html>

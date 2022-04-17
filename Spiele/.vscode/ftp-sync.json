@@ -1,0 +1,27 @@
+{
+    "remotePath": "./",
+    "host": "20.71.227.226",
+    "username": "ftp1",
+    "password": "fffFFF123",
+    "port": 21,
+    "secure": true,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}
