@@ -1,0 +1,265 @@
+@charset "utf-8";
+
+html {
+	background-color: #003366;
+	}
+	
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003366;
+	background-color: #FFFFFF;
+	margin-top: 20px;
+	max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 2%;
+	}
+	
+img {
+	max-width:100%;
+	height:auto;
+	}
+
+/********************************* REGATTA-KOPF ******************************/
+#regattakopf {
+	color: #003366;
+	z-index: 10;
+	}
+
+#regattakopf h1 {
+	margin: 0em;
+	font-size: 4em;
+	font-style: italic;
+	}	
+
+#regattakopf h2 {
+	margin: 0em;
+	font-size: 2em;
+	font-style: italic;
+	}	
+
+
+/********************************* LOGINART ******************************/
+#loginart {
+	margin-left: 0em;
+	color: #003366;
+	font-size: 10px;
+	z-index: 20;
+	}
+
+
+/********************************* CONTENT ******************************/
+#content {
+	color: #003366;
+	z-index: 10;
+	}
+
+#content h1 {
+	margin: 0em;
+	font-size: 1.5em;
+	font-weight: bold;
+	}	
+
+#content table {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	font-size: 1.2em;
+	}	
+	
+
+/********************************* Navigation ******************************/	
+section {
+	padding: 0;
+    overflow: auto; /* clearing für die floatenden article */
+	}
+
+article {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+
+.navi {
+    margin-bottom: 0.5em;
+	margin-top: 0.5em;
+    padding: 0px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	}
+
+.box.navi {
+	float: left;
+    margin-right: 2%;
+    width: 32%;
+	color: #FFFFFF;
+    overflow: auto;
+	background-color:#003366;
+	}
+
+@media screen and (max-width: 600px) {
+   .box.navi{
+   margin-right: 0%;
+   width: 100%;
+   }
+   
+}
+
+.box.navi:nth-of-type(3n+3) {
+    margin-right: 0;
+	}
+
+.navi a {
+	color: #FFFFFF;
+	text-decoration: none;
+	}
+
+.navi_hoehe {
+	height: 0.5em;
+}
+
+
+.navi table td input[type="submit"] {
+	color: #FFFFFF;
+	background-color:#003366;
+	border: 0px;
+	font-size:1.2em;
+}
+
+
+/********************************* Formular ******************************/	
+#content {
+	color: #003366;
+	z-index: 10;
+	}
+
+#formular table {
+	margin-bottom: 0.2em;
+	margin-top: 0.2em;
+	width: 100%;
+    }
+
+#formular table td {
+	width: 50%;
+    }
+
+#formular table td input[type="text"] {
+	font-size: 1.2em;
+	width: 100%;
+}
+
+#formular table td input[type="submit"] {
+	font-size: 1.2em;
+	width: 100%;
+}
+
+select {
+	font-size: 1.2em;
+}
+
+section {
+	padding: 0;
+    overflow: auto; /* clearing für die floatenden article */
+	}
+
+article {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+
+.formular {
+    margin-bottom: 0em;
+	margin-top: 0em;
+    padding: 0px;
+	color: #003366;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	}
+
+.box.formular {
+	float: left;
+    margin-right: 5%;
+    width: 47.5%;
+	color: #003366;
+    overflow: auto;
+	/*background-color:#F7EE00;*/
+	}
+
+@media screen and (max-width: 800px) {
+   .box.formular {
+   margin-right: 0%;
+   width: 100%;
+   }
+   
+}
+
+.box.formular:nth-of-type(2n+2) {
+    margin-right: 0;
+	}
+
+/*******************************************************************/
+.box2.formular {
+	float: left;
+    margin-right: 5%;
+    width: 100%;
+	color: #003366;
+    overflow: auto;
+	/*background-color:#F7EE00;*/
+	}
+
+@media screen and (max-width: 800px) {
+   .box2.formular {
+   margin-right: 0%;
+   width: 100%;
+   }
+   
+}
+
+.box2.formular:nth-of-type(1n+1) {
+    margin-right: 0;
+	}
+/*******************************************************************/
+
+.formular a {
+	color: #003366;
+	}
+
+.adresse {
+	border: 1px #003366 solid; 
+	padding: 1%;
+	margin-top:0.5em;
+	margin-bottom: 0.5em;
+}
+
+.select100 {
+	width: 100%;
+	font-size: 1.2em;
+}
+
+.select50 {
+	width: 75%;
+	font-size: 1.2em;
+}
+
+
+/********************************* Format für breite Listen ******************************/	
+/*** damit bei breiten Listen nicht blaue Schrift auf blauen Hintergrund kommt  **********/	
+.breite_liste {
+	background-color: #FFFFFF;
+	border-collapse: separate; 
+	border-spacing: 14;
+}
+
+.breite_liste2 {
+	background-color: #FFFFFF;
+	border-collapse: separate; 
+}
+/********************************* Format für Löschabfragen ******************************/	
+.del_question {
+	color:crimson;				/*rote Farbe*/
+	font-weight: bold;			/*fett-gedruckt*/
+}

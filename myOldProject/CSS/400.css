@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+html {
+	background-color: #FFFF02;
+	}
+
+/********************************* REGATTA-KOPF ******************************/
+#regattakopf h1 {
+	font-size: 2em;
+	}	
+
+#regattakopf h2 {
+	font-size: 1.5em;
+	}	
+
+/********************************* CONTENT ******************************/
+#content h1 {
+	font-size: 1.2em;
+	}	
+
+#content table {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1em;
+	}
+
+
+/********************************* Navigation ******************************/	
+.box.navi {
+    margin-right: 0%;
+    width: 100%;
+	}
+	
+.navi table td input[type="submit"] {
+	color: #FFFFFF;
+	background-color:#003366;
+	border: 0px;
+	font-size:1em;
+}
+
+/********************************* Formular ******************************/
+#formular table {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	font-size: 1em;
+	}
+
+#formular table td input[type="text"] {
+	font-size: 1em;
+	width: 100%;
+}
+
+
+#formular table td input[type="submit"] {
+	font-size: 1em;
+	width: 100%;
+}
+#formular input {
+	font-size: 1em;
+}
+
+select {
+	font-size: 1em;
+}
+
+.formular {
+	font-size: 1em;
+}
+
+.select100 {
+	width: 100%;
+	font-size: 1em;
+}
+.select50 {
+	width: 75%;
+	font-size: 1em;
+}

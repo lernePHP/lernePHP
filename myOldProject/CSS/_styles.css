@@ -1,0 +1,149 @@
+@charset "utf-8";
+/*html {overflow: hidden;}
+
+/********************************* BODY ******************************/
+
+html {
+	background-color: #003366;
+	}
+	
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003366;
+	background-color: #FFFFFF;
+	margin-top: 20px;
+	max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0.8%;
+	}
+	
+img {
+	max-width:100%;
+	height:auto;
+	}
+
+
+/********************************* REGATTA-KOPF ******************************/
+#regattakopf {
+	/*	border: 1px solid red; */
+	position: absolute;
+	background-color: #003399;
+	color: #FFFFFF;
+	left: 50px;
+	top: 20px;
+	width: 1000px;
+	height: 115px;
+	z-index: 10;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	}
+#regattakopf h1 {
+	margin-top: 10px;
+	padding-left: 30px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-size: 24px;
+	color:#FFFFFF;
+	}	
+#regattakopf h2 {
+	padding-top: 0px;
+	padding-left: 30px;
+	padding-bottom: 0px;
+	font-size: 18px;
+	color:#FFFFFF;
+	}	
+	
+/********************************* LOGINART ******************************/
+#loginart {
+	/*	border: 1px solid red; */
+	position: absolute;
+	color: #FFFFFF;
+	left: 80px;
+	top: 110;
+	font-size: 10px;
+	z-index: 20;
+	}
+	
+	
+/********************************* PITTERLOGO ******************************/
+#pitterlogo {
+	/*	border: 1px solid red; */
+	position: absolute;
+	left: 610px;
+	top: 38;
+	z-index: 20;
+	}
+	
+/********************************* CONTENT ******************************/
+#content {
+	/*	border: 1px solid red; */
+	position: absolute;
+	background-color:#FFFFFF;
+	left: 50px;
+	top: 130px;
+	width: 1000px;
+	height:490px;
+	z-index: 10;
+	padding-bottom: 0px;
+	overflow-y: auto;
+	overflow-x: auto;
+	}
+#content h1 {
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	font-weight: bold;
+	}	
+#content h2 {
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+	font-size: 16px;
+	font-weight: bold;
+	}	
+#content table {
+	margin-top: 10px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+	font-size: 11px;
+	}	
+
+/********************************* CONTENT freie Plätze******************************/
+#content_frei {
+	/*	border: 1px solid red; */
+	position: absolute;
+	background-color:#FFFFFF;
+	left: 10px;
+	top: 10px;
+	}
+#content_frei h1 {
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	font-weight: bold;
+	}	
+#content_frei h2 {
+	margin-top: 10px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+	font-size: 16px;
+	font-weight: bold;
+	}	
+#content_frei table {
+	margin-top: 10px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+	font-size: 11px;
+	}	
+	
