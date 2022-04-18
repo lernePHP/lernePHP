@@ -1,3 +1,6 @@
+# Zeichencodierung für die DB
+Empfehlung: utf8mb4_unicode_ci
+
 # bootstrap einbinden --> siehe bootstrap_Vorlage.php
 - Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/ bzw. https://getbootstrap.com/docs/5.1/examples/checkout/
 - cdn-Variante genügt. Bootstrap muss nicht unbedingt installiert werden
