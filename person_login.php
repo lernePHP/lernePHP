@@ -8,8 +8,8 @@ $pwd = "";
 //CHECKING SUBMIT BUTTON PRESS or NOT.
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST["submitBtn"]!="" && !empty($_POST["submitBtn"])) { 
 
-    isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim($_POST["input_Person_Email"]) : $email= "";
-    isset($_POST["input_Person_Passwort"]) && is_string($_POST["input_Person_Passwort"]) ? $pwd = trim($_POST["input_Person_Passwort"]) : $pwd= "";
+    isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim(htmlentities($_POST["input_Person_Email"])) : $email= "";
+    isset($_POST["input_Person_Passwort"]) && is_string($_POST["input_Person_Passwort"]) ? $pwd = trim(htmlentities($_POST["input_Person_Passwort"])) : $pwd= "";
 
 
 

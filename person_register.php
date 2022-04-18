@@ -17,14 +17,14 @@ $pwd = "";
 //CHECKING SUBMIT BUTTON PRESS or NOT.
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST["submitBtn"]!="" && !empty($_POST["submitBtn"])) { 
 
-    isset($_POST["input_Person_Nachname"]) && is_string($_POST["input_Person_Nachname"]) ? $nachname = trim($_POST["input_Person_Nachname"]) : $nachname= "";
-    isset($_POST["input_Person_Vorname"]) && is_string($_POST["input_Person_Vorname"]) ? $vorname = trim($_POST["input_Person_Vorname"]) : $vorname= "";
-    isset($_POST["input_Person_Strasse"]) && is_string($_POST["input_Person_Strasse"]) ? $strasse = trim($_POST["input_Person_Strasse"]) : $strasse= "";
-    isset($_POST["input_Person_PLZ"]) && is_string($_POST["input_Person_PLZ"]) ? $plz = trim($_POST["input_Person_PLZ"]) : $plz= "";
-    isset($_POST["input_Person_Ort"]) && is_string($_POST["input_Person_Ort"]) ? $ort = trim($_POST["input_Person_Ort"]) : $ort= "";
-    isset($_POST["input_Person_SVNr"]) && is_string($_POST["input_Person_SVNr"]) ? $svnr = trim($_POST["input_Person_SVNr"]) : $svnr= "";
-    isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim($_POST["input_Person_Email"]) : $email= "";
-    isset($_POST["input_Person_Passwort"]) && is_string($_POST["input_Person_Passwort"]) ? $pwd = trim($_POST["input_Person_Passwort"]) : $pwd= "";
+    isset($_POST["input_Person_Nachname"]) && is_string($_POST["input_Person_Nachname"]) ? $nachname = trim(htmlentities($_POST["input_Person_Nachname"])) : $nachname= "";
+    isset($_POST["input_Person_Vorname"]) && is_string($_POST["input_Person_Vorname"]) ? $vorname = trim(htmlentities($_POST["input_Person_Vorname"])) : $vorname= "";
+    isset($_POST["input_Person_Strasse"]) && is_string($_POST["input_Person_Strasse"]) ? $strasse = trim(htmlentities($_POST["input_Person_Strasse"])) : $strasse= "";
+    isset($_POST["input_Person_PLZ"]) && is_string($_POST["input_Person_PLZ"]) ? $plz = trim(htmlentities($_POST["input_Person_PLZ"])) : $plz= "";
+    isset($_POST["input_Person_Ort"]) && is_string($_POST["input_Person_Ort"]) ? $ort = trim(htmlentities($_POST["input_Person_Ort"])) : $ort= "";
+    isset($_POST["input_Person_SVNr"]) && is_string($_POST["input_Person_SVNr"]) ? $svnr = trim(htmlentities($_POST["input_Person_SVNr"])) : $svnr= "";
+    isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim(htmlentities($_POST["input_Person_Email"])) : $email= "";
+    isset($_POST["input_Person_Passwort"]) && is_string($_POST["input_Person_Passwort"]) ? $pwd = trim(htmlentities($_POST["input_Person_Passwort"])) : $pwd= "";
 
 
 
