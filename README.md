@@ -1,6 +1,9 @@
 # Zeichencodierung für die DB
 Empfehlung: utf8mb4_unicode_ci
 
+# Kurzüberblick über wichtige Funktinen von phpMyAdmin
+https://www.workshop.ch/openmind/2013/12/24/phpmyadmin-zusatzfunktionen-aktivieren-mit-dem-configuration-storage/#:~:text=Der%20phpMyAdmin%20Designer%20bietet%20eine,verschaffen%2C%20sondern%20auch%20solche%20erstellen.
+
 # bootstrap einbinden --> siehe bootstrap_Vorlage.php
 - Nähere Infos dazu auf http://holdirbootstrap.de/examples/signin/ bzw. https://getbootstrap.com/docs/5.1/examples/checkout/
 - cdn-Variante genügt. Bootstrap muss nicht unbedingt installiert werden
