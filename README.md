@@ -20,6 +20,7 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 - ein evtl. Fehler beim DB-Aufbau wird angezeigt und der Ladevorgang abgebrochen.
 - Die Verbindung kann unter der Variablen $conn angesprochen werden.
 
+
 # bsp_PDO_select.php, _query.php, _insert.php, _delete.php
 **Achtung!**
 **config.php und connection.php müssen vorhanden sein. Sie werden eingebunden**
@@ -27,6 +28,11 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 - SELECT, UPDATE, DELETE-Statesments erstellen und abschicken.
 - SELECT-Statements durchwandern
 - wie ist die ID des gerade eingefügten Datensatzes?
+
+
+# bsp_PDO_select_mit_iterable.php
+- enthält eine eigene Klasse, die dabei Hilft, die Datensätze eines Abfrageergebnisses sehr einfach tabellarisch darzustellen
+
 
 # person_ 
 so beginnen alle php-Dateien, die sich auf das konkrete Beispiel unseres Scooter-Verleihs beziehen.
