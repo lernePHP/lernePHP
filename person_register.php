@@ -245,14 +245,13 @@
             
             $stmt->execute();
             //echo "Id des eingefügten Datensatzes: ".$conn->lastInsertId()."<br>";
-            echo "$vorname $nachname wurde erfolgreich gespeichert";
+            echo "<div class='alert alert-success' role='alert'>$vorname $nachname wurde erfolgreich gespeichert!</div>";
         } catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
         $conn = null;
     }
     ?>
-
 
     <h2 class="mt-5">Datenerfassung zur Person</h2>
     <form class="form-signin" onSubmit="return checkForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="person_register">       
