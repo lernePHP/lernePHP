@@ -44,6 +44,7 @@ try {
     //----------------------------------------------------------------------------------------
     //  4) statement ausführen (binden und ausführen kann auch öfter ausgeführt werde, z.B. zum Einfügen mehrerer Datensätze)
     $stmt->execute();
+    echo $stmt->rowCount();      //Anzahl Datensätze im Ergebnis
     //----------------------------------------------------------------------------------------
 
 

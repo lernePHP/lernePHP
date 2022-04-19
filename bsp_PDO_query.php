@@ -23,7 +23,6 @@ try {
     echo "Error: " . $e->getMessage();
 }
 
-}
 ?>
 <!doctype html>
 <html lang="de">

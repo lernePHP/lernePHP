@@ -1,115 +1,3 @@
-<?php
-require_once 'config.php';
-require_once 'connection.php';
-
-$nachname ="";
-$vorname = "";
-$strasse = "";
-$plz = "";
-$ort = "";
-$svnr = "";
-$email = "";
-$stammkunde = "";
-$geschlecht = "";
-$abo = "";
-$pwd = "";
-
-//CHECKING SUBMIT BUTTON PRESS or NOT.
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST["submitBtn"]!="" && !empty($_POST["submitBtn"])) { 
-
-    isset($_POST["input_Person_Nachname"]) && is_string($_POST["input_Person_Nachname"]) ? $nachname = trim(htmlentities($_POST["input_Person_Nachname"])) : $nachname= "";
-    isset($_POST["input_Person_Vorname"]) && is_string($_POST["input_Person_Vorname"]) ? $vorname = trim(htmlentities($_POST["input_Person_Vorname"])) : $vorname= "";
-    isset($_POST["input_Person_Strasse"]) && is_string($_POST["input_Person_Strasse"]) ? $strasse = trim(htmlentities($_POST["input_Person_Strasse"])) : $strasse= "";
-    isset($_POST["input_Person_PLZ"]) && is_string($_POST["input_Person_PLZ"]) ? $plz = trim(htmlentities($_POST["input_Person_PLZ"])) : $plz= "";
-    isset($_POST["input_Person_Ort"]) && is_string($_POST["input_Person_Ort"]) ? $ort = trim(htmlentities($_POST["input_Person_Ort"])) : $ort= "";
-    isset($_POST["input_Person_SVNr"]) && is_string($_POST["input_Person_SVNr"]) ? $svnr = trim(htmlentities($_POST["input_Person_SVNr"])) : $svnr= "";
-    isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim(htmlentities($_POST["input_Person_Email"])) : $email= "";
-    isset($_POST["input_Person_Passwort"]) && is_string($_POST["input_Person_Passwort"]) ? $pwd = trim(htmlentities($_POST["input_Person_Passwort"])) : $pwd= "";
-
-
-
-    //------------------------------------------------------------------------------
-    //Passwort peppern und hashen vor dem Eintrag in die Datenbank
-    //MUSS NOCH GEMACHT WERDEN
-    
-    //Passwort peppern, sprich mit dem Pepper-String mischen für erhöhte Sicherheit. 
-    //Pepper-String siehe config.php
-    $pwd_peppered = hash_hmac ("sha256", $pwd, $pepper);
-
-    //Passwort hashen -> dieser Passwort-Hash wird dann i.d. Datenbank eingetragen
-    $pwd_hashed = password_hash($pwd_peppered, PASSWORD_DEFAULT);
-    //------------------------------------------------------------------------------
-
-
-
-    //auslesen der Checkbox!!!
-    //$stammkunde = var_dump(isset($_POST["input_Person_Stammkunde"]));
-    $stammkunde = isset($_POST["input_Person_Stammkunde"]) ? 1 : 0;
-
-
-    isset($_POST["input_Person_Geschlecht"]) ? $geschlecht = $_POST["input_Person_Geschlecht"] : $geschlecht = "";
-    isset($_POST["input_Person_Abonnement"]) ? $abo = $_POST["input_Person_Abonnement"] : $abo = "";
-
-
-
-
-    try {
-
-        //sql-Anweisung mit zu bindenden Parametern für das prepare-Statement
-        //prepare-Statements sind wichtig, um SQL-Injection vorzubeugen
-        $sql = "
-        INSERT INTO `person` (
-            Person_Nachname,
-            Person_Vorname,
-            Person_Strasse,
-            Person_PLZ,
-            Person_Ort,
-            Person_SVNr,
-            Person_Email,
-            Person_Stammkunde,
-            Person_Geschlecht,
-            Person_Abonnement,
-            Person_Passwort
-            )
-            VALUES (
-            :person_nachname, 
-            :person_vorname, 
-            :person_strasse, 
-            :person_plz, 
-            :person_ort, 
-            :person_svnr, 
-            :person_email, 
-            :person_stammkunde,
-            :person_geschlecht, 
-            :person_abonnement,
-            :person_passwort
-            )
-        ";
-
-
-        $stmt = $conn->prepare($sql);
-
-        $stmt->bindParam(':person_nachname', $nachname);
-        $stmt->bindParam(':person_vorname', $vorname);
-        $stmt->bindParam(':person_strasse', $strasse);
-        $stmt->bindParam(':person_plz', $plz);
-        $stmt->bindParam(':person_ort', $ort);
-        $stmt->bindParam(':person_svnr', $svnr);
-        $stmt->bindParam(':person_email', $email);
-        $stmt->bindParam(':person_stammkunde', $stammkunde);
-        $stmt->bindParam(':person_geschlecht', $geschlecht);
-        $stmt->bindParam(':person_abonnement', $abo);
-        $stmt->bindParam(':person_passwort', $pwd_hashed);
-        
-        $stmt->execute();
-        //echo "Id des eingefügten Datensatzes: ".$conn->lastInsertId()."<br>";
-    
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-
-}
-?>
 <!doctype html>
 <html lang="de">
 <head>
@@ -251,9 +139,121 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
     </script>
 </head>
 <body>
+    <div class="container">
+    <?php
+    require_once 'config.php';
+    require_once 'connection.php';
+
+    $nachname ="";
+    $vorname = "";
+    $strasse = "";
+    $plz = "";
+    $ort = "";
+    $svnr = "";
+    $email = "";
+    $stammkunde = "";
+    $geschlecht = "";
+    $abo = "";
+    $pwd = "";
+
+    //CHECKING SUBMIT BUTTON PRESS or NOT.
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST["submitBtn"]!="" && !empty($_POST["submitBtn"])) { 
+
+        isset($_POST["input_Person_Nachname"]) && is_string($_POST["input_Person_Nachname"]) ? $nachname = trim(htmlentities($_POST["input_Person_Nachname"])) : $nachname= "";
+        isset($_POST["input_Person_Vorname"]) && is_string($_POST["input_Person_Vorname"]) ? $vorname = trim(htmlentities($_POST["input_Person_Vorname"])) : $vorname= "";
+        isset($_POST["input_Person_Strasse"]) && is_string($_POST["input_Person_Strasse"]) ? $strasse = trim(htmlentities($_POST["input_Person_Strasse"])) : $strasse= "";
+        isset($_POST["input_Person_PLZ"]) && is_string($_POST["input_Person_PLZ"]) ? $plz = trim(htmlentities($_POST["input_Person_PLZ"])) : $plz= "";
+        isset($_POST["input_Person_Ort"]) && is_string($_POST["input_Person_Ort"]) ? $ort = trim(htmlentities($_POST["input_Person_Ort"])) : $ort= "";
+        isset($_POST["input_Person_SVNr"]) && is_string($_POST["input_Person_SVNr"]) ? $svnr = trim(htmlentities($_POST["input_Person_SVNr"])) : $svnr= "";
+        isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim(htmlentities($_POST["input_Person_Email"])) : $email= "";
+        isset($_POST["input_Person_Passwort"]) && is_string($_POST["input_Person_Passwort"]) ? $pwd = trim(htmlentities($_POST["input_Person_Passwort"])) : $pwd= "";
 
 
-<div class="container">
+
+        //------------------------------------------------------------------------------
+        //Passwort peppern und hashen vor dem Eintrag in die Datenbank
+        //MUSS NOCH GEMACHT WERDEN
+        
+        //Passwort peppern, sprich mit dem Pepper-String mischen für erhöhte Sicherheit. 
+        //Pepper-String siehe config.php
+        $pwd_peppered = hash_hmac ("sha256", $pwd, $pepper);
+
+        //Passwort hashen -> dieser Passwort-Hash wird dann i.d. Datenbank eingetragen
+        $pwd_hashed = password_hash($pwd_peppered, PASSWORD_DEFAULT);
+        //------------------------------------------------------------------------------
+
+
+
+        //auslesen der Checkbox!!!
+        //$stammkunde = var_dump(isset($_POST["input_Person_Stammkunde"]));
+        $stammkunde = isset($_POST["input_Person_Stammkunde"]) ? 1 : 0;
+
+
+        isset($_POST["input_Person_Geschlecht"]) ? $geschlecht = $_POST["input_Person_Geschlecht"] : $geschlecht = "";
+        isset($_POST["input_Person_Abonnement"]) ? $abo = $_POST["input_Person_Abonnement"] : $abo = "";
+
+
+
+
+        try {
+
+            //sql-Anweisung mit zu bindenden Parametern für das prepare-Statement
+            //prepare-Statements sind wichtig, um SQL-Injection vorzubeugen
+            $sql = "
+            INSERT INTO `person` (
+                Person_Nachname,
+                Person_Vorname,
+                Person_Strasse,
+                Person_PLZ,
+                Person_Ort,
+                Person_SVNr,
+                Person_Email,
+                Person_Stammkunde,
+                Person_Geschlecht,
+                Person_Abonnement,
+                Person_Passwort
+                )
+                VALUES (
+                :person_nachname, 
+                :person_vorname, 
+                :person_strasse, 
+                :person_plz, 
+                :person_ort, 
+                :person_svnr, 
+                :person_email, 
+                :person_stammkunde,
+                :person_geschlecht, 
+                :person_abonnement,
+                :person_passwort
+                )
+            ";
+
+
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(':person_nachname', $nachname);
+            $stmt->bindParam(':person_vorname', $vorname);
+            $stmt->bindParam(':person_strasse', $strasse);
+            $stmt->bindParam(':person_plz', $plz);
+            $stmt->bindParam(':person_ort', $ort);
+            $stmt->bindParam(':person_svnr', $svnr);
+            $stmt->bindParam(':person_email', $email);
+            $stmt->bindParam(':person_stammkunde', $stammkunde);
+            $stmt->bindParam(':person_geschlecht', $geschlecht);
+            $stmt->bindParam(':person_abonnement', $abo);
+            $stmt->bindParam(':person_passwort', $pwd_hashed);
+            
+            $stmt->execute();
+            //echo "Id des eingefügten Datensatzes: ".$conn->lastInsertId()."<br>";
+            echo "$vorname $nachname wurde erfolgreich gespeichert";
+        } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        $conn = null;
+    }
+    ?>
+
+
     <h2 class="mt-5">Datenerfassung zur Person</h2>
     <form class="form-signin" onSubmit="return checkForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="person_register">       
         <label for="input_Person_Nachname" class="sr-only">Nachname</label>
