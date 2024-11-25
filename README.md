@@ -23,7 +23,7 @@ hier können Servername, Datenbankname, Username und Passwort eingestellt werden
 **Achtung!**
 **config.php und connection.php müssen vorhanden sein. Sie werden eingebunden**
 - enthält die wichtigsten Php-Statements
-- SELECT, UPDATE, DELETE-Statesments erstellen und abschicken.
+- SELECT, UPDATE, DELETE-Statements erstellen und abschicken.
 - SELECT-Statements durchwandern
 - wie ist die ID des gerade eingefügten Datensatzes?
 
