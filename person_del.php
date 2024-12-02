@@ -30,7 +30,7 @@ try {
     //----------------------------------------------------------------------------------------
 
 
-    $header_text= "location:http://".$_SERVER['SERVER_NAME']."/lernePHP/DS_aus_Liste_aendern.php";
+    $header_text= "location:http://".$_SERVER['SERVER_NAME']."/lernePHP/DS_aus_Liste_aendern_und_loeschen.php";
     header($header_text);
 }
 catch(PDOException $e) {
