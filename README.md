@@ -1,3 +1,8 @@
+# Datenbank-Dump importieren
+http:/localhost/phpmyadmin aufrufen
+Datenbank "scooterverleih" anlegen, falls noch nicht vorhanden (Zeichencodierung siehe unten)
+Danach scooterverleih.sql aus dem Ordner DatenbankDump importieren.
+
 # Zeichencodierung für die DB
 Empfehlung: utf8mb4_unicode_ci
 
