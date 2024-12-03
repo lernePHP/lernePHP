@@ -40,8 +40,8 @@
         <h4 class="form-signin-heading mt-5">Suche:</h4>
 
         <label for="person_id" class="form-label mt-3">Person</label>
-        <select class="form-select" id="person_id" name="person_id" required>
-            <option value="">Choose...</option>
+        <select class="form-select is-invalid" id="person_id" name="person_id" required>
+            <option selected disabled value="">Choose...</option>
             <?php
                 try {
                     $sql = "SELECT Person_Id, concat(Person_Nachname, ' ',Person_Vorname) AS Name FROM `person`
@@ -59,7 +59,8 @@
                 }
             ?>
         </select>
-        <div class="invalid-feedback">
+            <!-- invalid-feedback funktioniert bei select in Kombination mit Bootstrap leider nicht. Das dürfte in Bootstrap-Bug sein! -->
+        <div id="person_idFeedback" class="invalid-feedback">
         Bitte wählen Sie einen gültigen Teilnehmer aus der Liste.
         </div>
 

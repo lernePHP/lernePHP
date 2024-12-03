@@ -145,18 +145,18 @@ else {
             err_vorname = "\n Geben Sie bitte einen Vornamen ein.";
             err_svnr = "Geben Sie eine gültige Sozialversicherungsnummer ein!";
 
-            if (document.person_register.input_Person_Vorname.value == "")
+            if (document.person_admin.input_Person_Vorname.value == "")
             {
                 err_msg = err_vorname;
-                document.person_register.input_Person_Vorname.focus();
+                document.person_admin.input_Person_Vorname.focus();
                 alert(err_msg);
 				return false;
             }
 
             
-            if (!isValidSVNR(document.person_register.input_Person_SVNr.value)) {
+            if (!isValidSVNR(document.person_admin.input_Person_SVNr.value)) {
                 err_msg = err_svnr;
-                document.person_register.input_Person_SVNr.focus();
+                document.person_admin.input_Person_SVNr.focus();
                 alert(err_msg);
 				return false;               
             }
