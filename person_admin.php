@@ -25,17 +25,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST[
     // es wurde auf SPEICHERN gedrückt. Die Änderungen müssen in die Datenbank geschrieben werden, 
     // bevor die aktualisierten Daten in das Formular eingetragen werden
 
-    $nachname       = $_POST['input_Person_Nachname'];
-    $vorname        = $_POST['input_Person_Vorname'];
-    $strasse        = $_POST['input_Person_Strasse'];
-    $plz            = $_POST['input_Person_PLZ'];
-    $ort            = $_POST['input_Person_Ort'];
-    $svnr           = $_POST['input_Person_SVNr'];
-    $email          = $_POST['input_Person_Email'];
-    $stammkunde     = $_POST['input_Person_Stammkunde'];
-    $geschlecht     = $_POST['input_Person_Geschlecht'];
-    $abo            = $_POST['input_Person_Abonnement'];
+    isset($_POST["input_Person_Nachname"]) && is_string($_POST["input_Person_Nachname"]) ? $nachname = trim(htmlentities($_POST["input_Person_Nachname"])) : $nachname= "";
+    isset($_POST["input_Person_Vorname"]) && is_string($_POST["input_Person_Vorname"]) ? $vorname = trim(htmlentities($_POST["input_Person_Vorname"])) : $vorname= "";
+    isset($_POST["input_Person_Strasse"]) && is_string($_POST["input_Person_Strasse"]) ? $strasse = trim(htmlentities($_POST["input_Person_Strasse"])) : $strasse= "";
+    isset($_POST["input_Person_PLZ"]) && is_string($_POST["input_Person_PLZ"]) ? $plz = trim(htmlentities($_POST["input_Person_PLZ"])) : $plz= "";
+    isset($_POST["input_Person_Ort"]) && is_string($_POST["input_Person_Ort"]) ? $ort = trim(htmlentities($_POST["input_Person_Ort"])) : $ort= "";
+    isset($_POST["input_Person_SVNr"]) && is_string($_POST["input_Person_SVNr"]) ? $svnr = trim(htmlentities($_POST["input_Person_SVNr"])) : $svnr= "";
+    isset($_POST["input_Person_Email"]) && is_string($_POST["input_Person_Email"]) ? $email = trim(htmlentities($_POST["input_Person_Email"])) : $email= "";
+    $stammkunde = isset($_POST["input_Person_Stammkunde"]) ? 1 : 0;
 
+    isset($_POST["input_Person_Geschlecht"]) ? $geschlecht = $_POST["input_Person_Geschlecht"] : $geschlecht = "";
+    isset($_POST["input_Person_Abonnement"]) ? $abo = $_POST["input_Person_Abonnement"] : $abo = "";
 
     $sql = "UPDATE person SET 
                 Person_Nachname = :person_nachname, 
