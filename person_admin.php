@@ -183,7 +183,7 @@ catch(PDOException $e) {
 <body>
 <div class="container">
     <h2 class="mt-5">Verwalten der Persondaten</h2>
-    <form class="form-signin" onSubmit="return checkForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="person_admin">       
+    <form class="form-signin" onSubmit="return checkForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?person_id=$person_id");?>" method="post" name="person_admin">       
         <label for="input_Person_Nachname" class="sr-only">Nachname</label>
         <input type="text" name="input_Person_Nachname" id="input_Person_Nachname" value = <?php echo "'".$nachname."'"?> class="form-control" placeholder="Nachname" required autofocus>
 
