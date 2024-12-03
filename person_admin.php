@@ -2,7 +2,6 @@
 // aktuell funktioniert dieses Skript noch nicht so, wie es soll.
 // Etwaige Änderungen werden nicht in die DB geschrieben.
 // Das Skript wird demnächst überarbeitet.
-// Test
 //echo $_GET['person_id'];
 
 require_once 'config.php';
@@ -22,35 +21,97 @@ $stammkunde = "";
 $geschlecht = "";
 $abo = "";
 
-try {
-    //----------------------------------------------------------------------------------------
-    //  1) select-Statement mit zu bindenden Parametern
-    $sql = "SELECT * FROM `person`
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["submitBtn"]) && $_POST["submitBtn"]!="" && !empty($_POST["submitBtn"])) {
+    // es wurde auf SPEICHERN gedrückt. Die Änderungen müssen in die Datenbank geschrieben werden, 
+    // bevor die aktualisierten Daten in das Formular eingetragen werden
+
+    $nachname       = $_POST['input_Person_Nachname'];
+    $vorname        = $_POST['input_Person_Vorname'];
+    $strasse        = $_POST['input_Person_Strasse'];
+    $plz            = $_POST['input_Person_PLZ'];
+    $ort            = $_POST['input_Person_Ort'];
+    $svnr           = $_POST['input_Person_SVNr'];
+    $email          = $_POST['input_Person_Email'];
+    $stammkunde     = $_POST['input_Person_Stammkunde'];
+    $geschlecht     = $_POST['input_Person_Geschlecht'];
+    $abo            = $_POST['input_Person_Abonnement'];
+
+
+    $sql = "UPDATE person SET 
+                Person_Nachname = :person_nachname, 
+                Person_Vorname  = :person_vorname,
+                Person_Strasse  = :person_strasse,
+                Person_PLZ      = :person_plz,
+                Person_Ort      = :person_ort,
+                Person_SVNr     = :person_svnr,
+                Person_Email    = :person_email,
+                Person_Stammkunde   = :person_stammkunde,
+                Person_Geschlecht   = :person_geschlecht,
+                Person_Abonnement   = :person_abonnement
             WHERE person_id = ".$person_id;
+
     //----------------------------------------------------------------------------------------
+    //  2) statement vorbereiten
+    $stmt = $conn->prepare($sql);
 
 
-    $result = $conn->query($sql);         //prepare und execute in einem
-
-    //Abfrageergebnis auslesen
-    foreach($result as $row => $akt_person) {
-        //aktuellen Datensatz ansprechen
-        $nachname = $akt_person['Person_Nachname'];
-        $vorname = $akt_person['Person_Vorname'];
-        $strasse = $akt_person['Person_Strasse'];
-        $plz = $akt_person['Person_PLZ'];
-        $ort = $akt_person['Person_Ort'];
-        $svnr = $akt_person['Person_SVNr'];
-        $email = $akt_person['Person_Email'];
-        $stammkunde = $akt_person['Person_Stammkunde'];
-        $geschlecht = $akt_person['Person_Geschlecht'];
-        $abo = $akt_person['Person_Abonnement'];
+    //----------------------------------------------------------------------------------------
+    //  3) Parameter binden
+    $stmt->bindParam(':person_nachname', $nachname);
+    $stmt->bindParam(':person_vorname', $vorname);
+    $stmt->bindParam(':person_strasse', $strasse);
+    $stmt->bindParam(':person_plz', $plz);
+    $stmt->bindParam(':person_ort', $ort);
+    $stmt->bindParam(':person_svnr', $svnr);
+    $stmt->bindParam(':person_email', $email);
+    $stmt->bindParam(':person_stammkunde', $stammkunde);
+    $stmt->bindParam(':person_geschlecht', $geschlecht);
+    $stmt->bindParam(':person_abonnement', $abo);
+    
+    //----------------------------------------------------------------------------------------
+    //  4) statement ausführen (binden und ausführen kann auch öfter ausgeführt werde, z.B. zum Einfügen mehrerer Datensätze)
+    try {
+        $stmt->execute(); 
     }
-    //----------------------------------------------------------------------------------------
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }           
 }
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
+else {
+    // beim Aufruf der Seite direkt oder von einer anderen Seite aus, nicht aber über den SPEICHERN Button
+    // Person via GET-Parameter person_id aus der DB suchen und die zugehörigen Daten ins Formular schreiben
+    try {
+        //----------------------------------------------------------------------------------------
+        //  1) select-Statement mit zu bindenden Parametern
+        $sql = "SELECT * FROM `person`
+                WHERE person_id = ".$person_id;
+        //----------------------------------------------------------------------------------------
+
+
+        $result = $conn->query($sql);         //prepare und execute in einem
+
+        //Abfrageergebnis auslesen
+        foreach($result as $row => $akt_person) {
+            //aktuellen Datensatz ansprechen
+            $nachname = $akt_person['Person_Nachname'];
+            $vorname = $akt_person['Person_Vorname'];
+            $strasse = $akt_person['Person_Strasse'];
+            $plz = $akt_person['Person_PLZ'];
+            $ort = $akt_person['Person_Ort'];
+            $svnr = $akt_person['Person_SVNr'];
+            $email = $akt_person['Person_Email'];
+            $stammkunde = $akt_person['Person_Stammkunde'];
+            $geschlecht = $akt_person['Person_Geschlecht'];
+            $abo = $akt_person['Person_Abonnement'];
+        }
+        //----------------------------------------------------------------------------------------
+    }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
