@@ -1,6 +1,7 @@
 <?php
 // aktuell funktioniert dieses Skript noch nicht so, wie es soll.
 // Etwaige Änderungen werden nicht in die DB geschrieben.
+// Das Skript wird demnächst überarbeitet.
 //echo $_GET['person_id'];
 
 require_once 'config.php';
