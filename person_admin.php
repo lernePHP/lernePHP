@@ -1,4 +1,5 @@
 <?php
+//
 //echo $_GET['person_id'];
 
 require_once 'config.php';
